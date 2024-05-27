@@ -1,3 +1,4 @@
-import { Card } from "./Card/Card";
+import { Card } from "./Card";
+import { Sidebar } from "./Sidebar";
 
-export { Card };
+export { Card, Sidebar };

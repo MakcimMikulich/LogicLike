@@ -1,19 +1,25 @@
 import styles from "./Sidebar.module.scss";
+import type { SidebarProps } from "./types";
 
-const links = [
-	"Все темы",
-	"Логика и мышление",
-	"Загадки",
-	"Головоломки",
-	"Путешествия",
-];
+export const Sidebar = ({
+  arrLinks,
+  activeLink,
+  setActiveLink,
+}: SidebarProps) => {
+  console.log(arrLinks);
 
-export const Sidebar = () => {
-	return (
-		<div className={styles.sidebar}>
-			{links.map((link) => (
-				<div className={styles.sidebar__link}>{link}</div>
-			))}
-		</div>
-	);
+  return (
+    <div className={styles.sidebar}>
+      {arrLinks.map((link, index) => (
+        <div
+          data-active={activeLink === index}
+          key={index}
+          onClick={() => setActiveLink(index)}
+          className={styles.sidebar__link}
+        >
+          {link}
+        </div>
+      ))}
+    </div>
+  );
 };

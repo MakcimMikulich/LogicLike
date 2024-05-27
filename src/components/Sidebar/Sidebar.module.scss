@@ -1,36 +1,36 @@
 .sidebar {
-	display: flex;
-	flex-direction: column;
-	padding: 12px;
-	border-radius: 18px;
-	border: 1px solid #cfcfe4;
-	background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid #cfcfe4;
+  background: #fff;
 }
 
 .sidebar__link {
-	border-radius: 12px;
-	padding: 12px;
-	cursor: pointer;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
 
-	background: #fff;
-	color: #39414b;
+  background: #fff;
+  color: #39414b;
 
-	font-family: Nunito, sans-serif;
-	font-size: 18px;
-	font-style: normal;
-	font-weight: 800;
-	line-height: 18px;
-	letter-spacing: -0.1px;
-	transition: background 0.2s, color 0.2s;
-	min-width: 212px;
+  font-family: Nunito, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 18px;
+  letter-spacing: -0.1px;
+  transition: background 0.2s, color 0.2s;
+  min-width: 212px;
 
-	&.active {
-		background: #5fbf77;
-		color: #fff;
-	}
+  &[data-active="true"] {
+    background: #5fbf77;
+    color: #fff;
+  }
 
-	&:hover {
-		background: #5fbf77;
-		color: #fff;
-	}
+  &:hover {
+    background: #5fbf77;
+    color: #fff;
+  }
 }
