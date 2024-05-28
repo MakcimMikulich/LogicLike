@@ -1,25 +1,35 @@
+import { useCallback } from "react";
 import styles from "./Sidebar.module.scss";
 import type { SidebarProps } from "./types";
 
 export const Sidebar = ({
-  arrLinks,
-  activeLink,
-  setActiveLink,
+	uniqueTags,
+	activeLink,
+	setActiveLink,
 }: SidebarProps) => {
-  console.log(arrLinks);
+	const handlerClick = useCallback(
+		(index: number) => {
+			if (activeLink === index) {
+				return;
+			}
 
-  return (
-    <div className={styles.sidebar}>
-      {arrLinks.map((link, index) => (
-        <div
-          data-active={activeLink === index}
-          key={index}
-          onClick={() => setActiveLink(index)}
-          className={styles.sidebar__link}
-        >
-          {link}
-        </div>
-      ))}
-    </div>
-  );
+			setActiveLink(index);
+		},
+		[activeLink]
+	);
+
+	return (
+		<div className={styles.sidebar}>
+			{["Все темы", ...uniqueTags].map((link, index) => (
+				<div
+					data-active={activeLink === index}
+					key={index}
+					onClick={() => handlerClick(index)}
+					className={styles.sidebar__link}
+				>
+					{link}
+				</div>
+			))}
+		</div>
+	);
 };
